@@ -31,6 +31,7 @@ def main
     dif = number1.to_i
     prod = number1.to_i
     div = number1.to_f
+    pow = number1.to_i
     operator = gets.chomp
 #    while operator == "+" || operator == "-" || operator == "*" || operator == "/" ||
     
@@ -60,6 +61,12 @@ def main
             div = div/number2.to_f
             operator = gets.chomp
             puts "total: #{div}" if operator != "/"
+        
+        elsif operator == "**"
+            number2 = gets.chomp
+            pow = pow**number2.to_i
+            operator = gets.chomp
+            puts "total: #{pow}" if operator != "**"
         end
 #        operator = gets.chomp
 #    end
