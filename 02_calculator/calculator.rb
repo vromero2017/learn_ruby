@@ -1,5 +1,7 @@
 # Ruby's simple Calculator
 
+
+
 # Addition Method
 def sum(num1)
     sum = num1
@@ -71,11 +73,18 @@ end
 
 # Factorial Method
 def fact(num1)
-    number_range = (num1).downto(1).to_a
-    fact = number_range.inject(:*)
-    puts "The factorial of #{num1} is #{fact}"
+    loop do
+        number_range = (num1).downto(1).to_a
+        fact = number_range.inject(:*)
+        puts "#{num1}! = #{fact}"
+        puts fact
+        op = gets.chomp
+        operator(op,fact)
+    end
 end
 
+
+# Operator Method
 def operator(op,number1)
     number1 = number1
     operator = op
