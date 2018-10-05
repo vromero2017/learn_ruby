@@ -1,104 +1,106 @@
-#write your code here
+# Ruby's simple Calculator
+
+# Addition Method
 def zum(num1)
-    zum_array = num1.to_a
-    zum = zum_array.sum
-    puts zum
+    sum = num1
+    loop do
+        number2 = gets.chomp!
+        sum = sum + number2.to_i
+        operator = gets.chomp!
+        if operator == "="
+            puts "total: #{sum}"
+            break
+        end
+    end
 end
 
 
-
-def dif(num_dif)
+# Subtraction Method
+def dif(num1)
+    dif = num1
+    loop do
+        number2 = gets.chomp
+        dif = dif-number2.to_i
+        operator = gets.chomp
+        if operator == "="
+            puts "total: #{dif}" 
+            break
+        end
+    end 
 end
         
-def product(num_prod)
+
+# Multiplication Methos
+def product(num1)
+    product = num1
+    loop do
+        number2 = gets.chomp
+        product = product*number2.to_i
+        operator = gets.chomp
+        if operator == "="
+           puts "total: #{product}"
+           break
+        end
+    end
 end
 
-def div(num_div)
+
+# Division Method
+def div(num1)
+    div = num1
+    loop do
+        number2 = gets.chomp
+        div = div/number2.to_f
+        operator = gets.chomp
+        if operator == "="    
+            puts "total: #{div}" 
+            break
+        end
+    end
 end
 
-def factorial(number)
-    number = number.to_i
-    number_range = (number).downto(1).to_a
-    factorial = number_range.inject(:*)
-    puts "The factorial of #{number} is #{factorial}"
+# Exponential Method
+def pow(num1)
+    pow = num1
+    loop do
+        number2 = gets.chomp
+        pow = pow**number2.to_i
+        operator = gets.chomp
+        if operator == "="
+            puts "total: #{pow}"
+            break
+        end
+    end
 end
 
-def power(num_power)
+
+# Factorial Method
+def fact(num1)
+    number_range = (num1).downto(1).to_a
+    fact = number_range.inject(:*)
+    puts "The factorial of #{num1} is #{fact}"
 end
 
 
-
+# Main Function
 def main
     puts "Ruby's Calculator"
     puts " Use (+) to sum // (-) to rest // (*) to multiply // (/) to Divide // (**) for power // (!) for Factorial "
     number1 = gets.chomp.to_i  
-    sum = number1
-    dif = number1
-    prod = number1
-    div = number1.to_f
-    pow = number1
-    fac = number1
     operator = gets.chomp
-
-       if   operator == "+"
-           loop do 
-                number2 = gets.chomp!
-                sum = sum + number2.to_i
-                operator = gets.chomp!
-                if operator == "="
-                    puts "total: #{sum}"
-                    break
-                end
-            end
-            
-       elsif operator == "-"
-            loop do
-                number2 = gets.chomp
-                dif = dif-number2.to_i
-                operator = gets.chomp
-                if operator != "-"
-                    puts "total: #{dif}" 
-                    break
-                end
-            end 
-        
-       elsif operator == "*"
-            loop do
-                number2 = gets.chomp
-                prod = prod*number2.to_i
-                operator = gets.chomp
-                if operator != "*"
-                    puts "total: #{prod}"
-                    break
-                end
-            end
-        
-            
-        elsif operator == "/"
-            loop do
-                number2 = gets.chomp
-                div = div/number2.to_f
-                operator = gets.chomp
-                if operator != "/"    
-                    puts "total: #{div}" 
-                    break
-                end
-            end
-            
-        elsif operator == "**"
-            loop do
-                number2 = gets.chomp
-                pow = pow**number2.to_i
-                operator = gets.chomp
-                if operator != "**"
-                    puts "total: #{pow}"
-                    break
-                end
-            end
-            
-        elsif operator == "!"
-            factorial(number1)
-        end
+    if   operator == "+"
+        zum(number1)
+    elsif operator == "-"
+        dif(number1)
+    elsif operator == "*"
+        product(number1)
+    elsif operator == "/"
+        div(number1)
+    elsif operator == "**"
+        pow(number1)    
+    elsif operator == "!"
+        fact(number1)
+    end
 end
 
 main if __FILE__ ==$PROGRAM_NAME
