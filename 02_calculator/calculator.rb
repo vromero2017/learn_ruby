@@ -1,7 +1,6 @@
 # Ruby's simple Calculator
 
 
-
 # Addition Method
 def sum(num1)
     sum = num1
@@ -102,7 +101,6 @@ def operator(op,number1)
         fact(number1)
     end
 end
-
 
 
 # Main Function
